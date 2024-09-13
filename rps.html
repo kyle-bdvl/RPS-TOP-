@@ -4,14 +4,53 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <script src="rps.js"></script>
+  <link rel="stylesheet" href="rps.css">
 </head>
-<body>
-  <script>
-   
+    <body>
+        <div class="center">
+
+            <div class="Player">
+              Player
+                <div class="container">
+                    <button class="rock">
+                        Rock
+                    </button>
+                    
+                    <button class="scissors">
+                        Scissors
+                    </button>
+                    
+                    <button class="paper">
+                        Paper
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+        <div class ="middle">
+            <div class="Computer">
+                Computer
+
+                <div class="answer">
+
+                </div>
+            </div>
+        </div>
 
 
+        <div class="bottom">
+            <div class="Winner">
+                <h1 class="winner"></h1>
+                <button class="reset" onclick="ResetGame()">Play Again?</button>
+            </div>
+        </div>
 
-  </script>
-</body>
+        </div>
+        <script src="rps.js">
+
+            
+        </script>
+
+    </body>
 </html>

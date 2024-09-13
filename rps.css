@@ -1,0 +1,48 @@
+
+.center{
+  display:flex;
+  justify-content: center;
+  align-content: center;
+  background-color: none;
+  border-color:green;
+}
+
+
+.Player{
+  margin:0;
+  padding:0;
+  text-align: center;
+  font-size: 40px;
+  color:black;
+  background-color: aquamarine;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  gap:40px;
+ 
+}
+
+.middle{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  border-color: red; 
+  margin:80px;
+  padding:0px;
+  font-size: 40px;
+}
+
+.Computer{
+  background-color: red;
+}
+
+.Winner{
+  display:flex;
+  justify-content: center;
+  align-content: center;
+
+
+}

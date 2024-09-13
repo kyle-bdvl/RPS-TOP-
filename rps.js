@@ -1,6 +1,10 @@
 console.log("Rock Paper Scissors The Game")
 const p = "PAPER", r = "ROCK", s="SCISSORS";
 
+let HC="";
+let CC="";
+var humanScore =0, ComputerScore=0; 
+
 function getComputerChoice(){ 
     let random = Math.floor(Math.random()*3);
     if (random === 0){
@@ -15,47 +19,69 @@ function getComputerChoice(){
 
 }
 
-//gets the human Choice via prompt 
-function getHumanChoice(){
-    let humanChoice = window.prompt("Enter Rock, Paper or Scissors");
-    humanChoice = humanChoice.toLocaleUpperCase();
-    if (humanChoice===r||humanChoice===p||humanChoice===s){
-        return humanChoice;
-    }
-    else {
-        alert("Please Enter the correct input");
-        return getHumanChoice();
-    }
-}
-
-var humanScore =0, ComputerScore=0; //initialized to zero for both 
-
-//writting logic to play a single round 
 function playRound(HC,CC){
-    if ((HC ===s && CC === p ) ||(HC ===r && CC === s)||(HC=== p && CC === r))
-        humanScore+=1;
+    
+    if ((HC ==s && CC == p ) ||(HC ==r && CC == s)||(HC== p && CC == r))
+        alert("Human Wins")
     else if (HC === CC){
-        alert("tie");
+        alert("Tie");
     }
     else{ 
-        ComputerScore= ComputerScore +1;
+        alert("Computer Wins");
     }
+    alert ("computer played "+CC+ "\nHuman Played "+ HC);
     //global score
-    console.log("Human Score :"+humanScore);
-    console.log("Computer Score :"+ComputerScore);
+    // console.log("Human Score :"+humanScore);
+    // console.log("Computer Score :"+ComputerScore);
 
 }
 
-function playGame (HC,CC){
+// adding the query selector 
+const rock = document.querySelector("rock");
+
+rock.addEventListener("click", ()=>{
+    HC = r;
+    CC= getComputerChoice();
+    playRound(HC,CC);
     
-    while (humanScore<5 && ComputerScore<5){
-        let CC= getComputerChoice();
-        let HC = getHumanChoice();
-        playRound(HC,CC);
-        alert ("computer played "+CC+ "\nHuman Played "+ HC);
+});
+
+
+const paper = document.querySelector("paper");
+paper.addEventListener("click", ()=>{
+    HC = p;
+    CC= getComputerChoice();
+    playRound(HC,CC);
+    
+});
+
+
+const scissors = document.querySelector("scissors");
+scissors.addEventListener("click", ()=>{
+    HC = s;
+    CC= getComputerChoice();
+    playRound(HC,CC);
+    
+    
+});
+
+
+
+// writting logic to play a single round 
+
+
+
+
+// function playGame (HC,CC){
+    
+//     while (humanScore<5 && ComputerScore<5){
+//         let CC= getComputerChoice();
+//         let HC = getHumanChoice();
+//         playRound(HC,CC);
+//         alert ("computer played "+CC+ "\nHuman Played "+ HC);
        
-    }
-}
+//     }
+// }
 
 function checkWinner (humanScore, ComputerScore){
     if (humanScore> ComputerScore){
@@ -65,6 +91,18 @@ function checkWinner (humanScore, ComputerScore){
         alert("Computer wins");
 }
 
+//fucntion to reset game 
+// function ResetGame(){
+//     let CC= getComputerChoice();
+//     let HC = getHumanChoice(); 
+//     playRound(HC,CC);
+//     checkWinner(humanScore,ComputerScore);
+//     humanScore =0, ComputerScore=0; 
+// }
 
-playGame();
-checkWinner(humanScore,ComputerScore);
+// let CC= getComputerChoice();
+// let HC = getHumanChoice();
+// playRound(HC,CC);
+
+
+
