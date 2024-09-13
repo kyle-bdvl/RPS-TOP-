@@ -4,16 +4,23 @@ const p = "PAPER", r = "ROCK", s="SCISSORS";
 let HC="";
 let CC="";
 var humanScore =0, ComputerScore=0; 
-
+const answer = document.querySelector(".answer");
 function getComputerChoice(){ 
+    let computerAnswerText="";
     let random = Math.floor(Math.random()*3);
     if (random === 0){
+        computerAnswerText='Paper';
+        answer.textContent= computerAnswerText;
         return p;
     }
     else if (random ===1){
+        computerAnswerText='Rock';
+        answer.textContent= computerAnswerText;
         return r;
     }
     else {
+        computerAnswerText='Scissors';
+        answer.textContent= computerAnswerText;
         return s;
     }
 
@@ -37,7 +44,9 @@ function playRound(HC,CC){
 }
 
 // adding the query selector 
-const rock = document.querySelector("rock");
+
+
+const rock = document.querySelector('.rock');
 
 rock.addEventListener("click", ()=>{
     HC = r;
@@ -47,7 +56,7 @@ rock.addEventListener("click", ()=>{
 });
 
 
-const paper = document.querySelector("paper");
+const paper = document.querySelector(".paper");
 paper.addEventListener("click", ()=>{
     HC = p;
     CC= getComputerChoice();
@@ -56,7 +65,7 @@ paper.addEventListener("click", ()=>{
 });
 
 
-const scissors = document.querySelector("scissors");
+const scissors = document.querySelector(".scissors");
 scissors.addEventListener("click", ()=>{
     HC = s;
     CC= getComputerChoice();

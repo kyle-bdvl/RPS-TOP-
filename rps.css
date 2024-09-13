@@ -36,7 +36,7 @@
 }
 
 .Computer{
-  background-color: red;
+  
 }
 
 .Winner{
@@ -45,4 +45,9 @@
   align-content: center;
 
 
+}
+
+.answer {
+  text-align: center;
+  border: 5px solid aqua ;
 }
