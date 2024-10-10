@@ -46,35 +46,50 @@ function playRound(HC,CC){
 // adding the query selector 
 
 
-const rock = document.querySelector('.rock');
+// const rock = document.querySelector('.rock');
 
-rock.addEventListener("click", ()=>{
-    HC = r;
-    CC= getComputerChoice();
-    playRound(HC,CC);
+// rock.addEventListener("click", ()=>{
+//     HC = r;
+//     CC= getComputerChoice();
+//     playRound(HC,CC);
     
+// });
+
+
+// const paper = document.querySelector(".paper");
+// paper.addEventListener("click", ()=>{
+//     HC = p;
+//     CC= getComputerChoice();
+//     playRound(HC,CC);
+    
+// });
+
+
+// const scissors = document.querySelector(".scissors");
+// scissors.addEventListener("click", ()=>{
+//     HC = s;
+//     CC= getComputerChoice();
+//     playRound(HC,CC);
+    
+    
+// });
+
+
+// I think you can shorten the above to this
+// requires you to use id for rock, paper and scissors however
+document.addEventListener("DOMContentLoaded", () => {
+    const buttons = document.querySelector(".container");
+    buttons.addEventListener("click", (e) => {
+        const pressed = e.target;
+        switch(pressed.id){
+            case "rock": HC = r; break;
+            case "paper": HC = p; break;
+            case "scissors": HC = s; break;
+        }
+        CC= getComputerChoice();
+        playRound(HC,CC);
+    });
 });
-
-
-const paper = document.querySelector(".paper");
-paper.addEventListener("click", ()=>{
-    HC = p;
-    CC= getComputerChoice();
-    playRound(HC,CC);
-    
-});
-
-
-const scissors = document.querySelector(".scissors");
-scissors.addEventListener("click", ()=>{
-    HC = s;
-    CC= getComputerChoice();
-    playRound(HC,CC);
-    
-    
-});
-
-
 
 // writting logic to play a single round 
 
