@@ -5,6 +5,8 @@ let HC="";
 let CC="";
 var humanScore =0, ComputerScore=0; 
 const answer = document.querySelector(".answer");
+
+const display =document.getElementById('display')
 function getComputerChoice(){ 
     let computerAnswerText="";
     let random = Math.floor(Math.random()*3);
